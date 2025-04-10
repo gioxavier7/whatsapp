@@ -32,7 +32,7 @@ async function carregarContatosConversas() {
         const loadingDiv = criarElemento('div', { className: 'loading', textContent: 'Carregando contatos...' });
         listaContatos.replaceChildren(loadingDiv);
 
-        const resposta = await fetch(`http://localhost:8080/v1/whatsapp/conversas/${numeroTelefone}`);
+        const resposta = await fetch(`https://api-wpp-qs4y.onrender.com/v1/whatsapp/conversas/${numeroTelefone}`);
         const conversas = await resposta.json();
 
         if (conversas.length === 0) {
